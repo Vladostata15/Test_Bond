@@ -54,3 +54,44 @@ if sum>price:
     print("You have back:", sum-price)
 
 print("Have a good trip!")
+
+
+
+
+import time
+while True:
+    password = input("Enter the password: ")
+    if len(password) != 4:
+        print("Try again!")
+    else:
+
+        break
+check = False
+list = [0,0,0,0]
+startTime = time.time()
+for i in range (10):
+    list[0] = i
+    for _ in range(10):
+        list[1] = _
+        if password == (f"{list[0]}{list[1]}{list[2]}{list[3]}"):
+            finishTime = time.time()
+            check = True
+            print("Your password is:",(f"{list[0]}{list[1]}{list[2]}{list[3]}"))
+            break
+        for _1 in range(10):
+            list[2] = _1
+            if password == (f"{list[0]}{list[1]}{list[2]}{list[3]}"):
+                check = True
+                print("Your password is:", (f"{list[0]}{list[1]}{list[2]}{list[3]}"))
+                finishTime = time.time()
+                break
+            for _2 in range(10):
+                list[3] = _2
+                if password == (f"{list[0]}{list[1]}{list[2]}{list[3]}"):
+                    check = True
+                    print("Your password is:", (f"{list[0]}{list[1]}{list[2]}{list[3]}"))
+                    finishTime = time.time()
+                    break
+    if check == True:
+        break
+print(f"It took to hack your password: {finishTime-startTime}s")
